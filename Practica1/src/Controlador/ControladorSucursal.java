@@ -15,14 +15,9 @@ import Modelos.Venta;
  */
 public class ControladorSucursal {
     
-    private Sucursal sucursales[];
+    private Sucursal sucursales;
     private Sucursal sucursal;
     private Venta venta;
-
-    public ControladorSucursal () {
-        sucursales = new Sucursal[4];
-
-    }
 
     public ControladorSucursal(String nombre){
         getSucursal().setNombre(nombre);  
@@ -39,11 +34,11 @@ public class ControladorSucursal {
         this.sucursal = sucursal;
     }
 
-    public Sucursal[] getSucursales() {
+    public Sucursal getSucursales() {
         return sucursales;
     }
 
-    public void setSucursales(Sucursal[] sucursales) {
+    public void setSucursales(Sucursal sucursales) {
         this.sucursales = sucursales;
     }
 
@@ -70,23 +65,23 @@ public class ControladorSucursal {
             throw new SpaceException();
         }
 
-        sucursal.setVentas(new Venta[EnumMes.values().length]);
+        sucursal.setVentas(new Venta);
         for (int i = 0; i < EnumMes.values().length; i++) {
             Venta venta = new Venta();
             venta.setId(i + 1);
-            venta.setMes(EnumMes.values()[i]);
+            venta.setMes(EnumMes.values();
             venta.setValor(0.0);
-            sucursal.getVentas()[i] = venta;
+            sucursal.getVentas() = venta;
         }
 
-        sucursales[pos] = sucursal;
+        sucursales = sucursal;
         return true;
     }
 
     public boolean guardarVentas(Integer posVenta, Double valor) throws SpaceException{
         if (this.sucursal != null) {
             if (posVenta <= this.sucursal.getVentas().length-1) {
-                sucursal.getVentas()[posVenta].setValor(valor);
+                sucursal.getVentas().setValor(valor);
             }else{
                 throw new SpaceException();
             }

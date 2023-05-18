@@ -13,7 +13,7 @@ public class Sucursal {
 
     private Integer id;
     private String nombre;
-    private Venta ventas [];
+    private Venta ventas ;
     
     public Integer getId() {
         return id;
@@ -31,11 +31,11 @@ public class Sucursal {
         this.nombre = nombre;
     }
 
-    public Venta[] getVentas() {
+    public Venta getVentas() {
         return ventas;
     }
 
-    public void setVentas(Venta[] ventas) {
+    public void setVentas(Venta ventas) {
         this.ventas = ventas;
     }
 
