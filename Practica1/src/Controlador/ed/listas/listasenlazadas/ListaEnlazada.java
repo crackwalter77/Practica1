@@ -1,16 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controller.ed.ListaEnlazada;
+package Controlador.ed.listas.listasenlazadas;
 
-import controller.ed.listaEnlazada.exception.EmptyException;
-import controller.ed.listaEnlazada.exception.PositionException;
+import Controlador.ed.listas.exception.EmptyException;
+import Controlador.ed.listas.exception.PositionException;
 
 /**
  *
- * @author danny
+ * @author walter
  */
 public class ListaEnlazada<E> {
 
@@ -30,7 +29,7 @@ public class ListaEnlazada<E> {
     }
 
     public void insertar(E info) {
-        NodoLista<E> nuevo = new NodoLista<>(null, info);
+        NodoLista<E> nuevo = new NodoLista<>(info);
         if (isEmpty()) {
             this.cabecera = nuevo;
             this.size++;
@@ -48,7 +47,7 @@ public class ListaEnlazada<E> {
         if (isEmpty()) {
             insertar(info);
         } else {
-            NodoLista<E> nuevo = new NodoLista<>(null, info);
+            NodoLista<E> nuevo = new NodoLista<>(info);
             nuevo.setSig(cabecera);
             cabecera = nuevo;
             size++;
@@ -62,7 +61,7 @@ public class ListaEnlazada<E> {
             insertarInicio(info);
         } else if (pos >= 0 && pos < size()) {
             NodoLista<E> aux = cabecera;
-            NodoLista<E> nuevo = new NodoLista<>(null, info);
+            NodoLista<E> nuevo = new NodoLista<>(info);
             for (int i = 0; i < (pos - 1); i++) {
                 aux = aux.getSig();
             }
@@ -91,13 +90,35 @@ public class ListaEnlazada<E> {
                     }
                     dato = aux.getInfo();
                 }
-            }else{
+            } else {
                 throw new PositionException();
             }
             return dato;
         }
     }
-     public E delete(Integer pos) throws EmptyException, PositionException {
+
+    public void modifica(Integer pos, E info) throws EmptyException, PositionException {
+
+        if (isEmpty()) {
+            throw new EmptyException();
+        } else {
+            if (pos >= 0 && pos < size()) {
+                if (pos == 0) {
+                    this.cabecera.setInfo(info);
+                } else {
+                    NodoLista<E> aux = cabecera;
+                    for (int i = 0; i < pos; i++) {
+                        aux = aux.getSig();
+                    }
+                    aux.setInfo(info);
+                }
+            } else {
+                throw new PositionException();
+            }
+        }
+    }
+
+    public E delete(Integer pos) throws EmptyException, PositionException {
         if (isEmpty()) {
             throw new EmptyException();
         } else {
@@ -109,25 +130,26 @@ public class ListaEnlazada<E> {
                     size--;
                 } else {
                     NodoLista<E> aux = cabecera;
-                    for (int i = 0; i < (pos-1); i++) {
+                    for (int i = 0; i < (pos - 1); i++) {
                         aux = aux.getSig();
                     }
-                        NodoLista<E> aux1 = aux.getSig();
-                        dato = aux1.getInfo();
+                    NodoLista<E> aux1 = aux.getSig();
+                    dato = aux1.getInfo();
                     NodoLista<E> proximo = aux.getSig();
                     aux.setSig(proximo.getSig());
                     size--;
                 }
-            }else{
+            } else {
                 throw new PositionException();
             }
             return dato;
         }
     }
-     
-     public void deleteAll(){
-         this.cabecera = null;
-     }
+
+    public void deleteAll() {
+        this.cabecera = null;
+    }
+
     public Integer size() {
         return size;
     }
@@ -142,7 +164,7 @@ public class ListaEnlazada<E> {
                 System.out.println(aux.getInfo());
                 aux = aux.getSig();
             }
-            System.out.println("-------Fin de la Lista-------");
+            System.out.println("-------Lista Fin-------");
         }
 
     }
