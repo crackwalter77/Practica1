@@ -1,19 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Modelos;
+package modelo;
+
+import controlador.sd.list.listasenlazadas.ListaEnlazada;
 
 /**
  *
- * @author walter
+ * @author migue
  */
 public class Sucursal {
 
     private Integer id;
     private String nombre;
-    private Venta ventas ;
+    private ListaEnlazada<Venta> ventas;
     
     public Integer getId() {
         return id;
@@ -31,11 +32,11 @@ public class Sucursal {
         this.nombre = nombre;
     }
 
-    public Venta getVentas() {
+    public ListaEnlazada<Venta> getVentas() {
         return ventas;
     }
 
-    public void setVentas(Venta ventas) {
+    public void setVentas(ListaEnlazada<Venta> ventas) {
         this.ventas = ventas;
     }
 
@@ -45,3 +46,4 @@ public class Sucursal {
     }
     
 }
+

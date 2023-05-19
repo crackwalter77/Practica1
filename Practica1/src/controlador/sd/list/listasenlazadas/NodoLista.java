@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador.ed.listas.listasenlazadas;
+package controlador.sd.list.listasenlazadas;
 
 /**
  *
- * @author walter
+ * @author migue
  */
 public class NodoLista <E> {
     private E info;
