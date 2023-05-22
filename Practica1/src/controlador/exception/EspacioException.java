@@ -6,7 +6,7 @@ package controlador.exception;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class EspacioException extends Exception{
 

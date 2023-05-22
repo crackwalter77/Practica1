@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class AdaptadorDao<T> implements InterfaceDao{
     private Conexion conex;

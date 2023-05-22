@@ -9,7 +9,7 @@ import controlador.sd.list.exception.PositionException;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class ListaEnlazada<E> {
 

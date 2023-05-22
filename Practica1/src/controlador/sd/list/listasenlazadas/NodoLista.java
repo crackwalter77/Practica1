@@ -6,7 +6,7 @@ package controlador.sd.list.listasenlazadas;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class NodoLista <E> {
     private E info;

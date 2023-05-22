@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public interface InterfaceDao<T> {
 

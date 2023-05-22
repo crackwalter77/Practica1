@@ -6,7 +6,7 @@ package controlador.sd.list.exception;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class EmptyException extends Exception{
 

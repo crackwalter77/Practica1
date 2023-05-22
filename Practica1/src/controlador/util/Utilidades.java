@@ -10,7 +10,7 @@ import modelo.Venta;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class Utilidades {
 

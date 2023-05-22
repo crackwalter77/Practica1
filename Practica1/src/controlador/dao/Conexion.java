@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.security.AnyTypePermission;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class Conexion {
     private XStream xstream;

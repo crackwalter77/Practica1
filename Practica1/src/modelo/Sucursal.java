@@ -8,7 +8,7 @@ import controlador.sd.list.listasenlazadas.ListaEnlazada;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class Sucursal {
 

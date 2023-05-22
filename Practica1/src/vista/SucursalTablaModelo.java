@@ -13,7 +13,7 @@ import modelo.Sucursal;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class SucursalTablaModelo extends AbstractTableModel {
 

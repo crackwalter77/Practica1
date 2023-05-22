@@ -13,7 +13,7 @@ import modelo.Venta;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public class ControladorSucursal {
     private ListaEnlazada<Sucursal> sucursales;

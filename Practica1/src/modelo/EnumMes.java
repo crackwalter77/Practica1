@@ -6,7 +6,7 @@ package modelo;
 
 /**
  *
- * @author migue
+ * @author walter
  */
 public enum EnumMes {
     ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE;
