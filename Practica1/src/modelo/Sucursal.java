@@ -4,7 +4,7 @@
  */
 package modelo;
 
-import controlador.sd.list.listasenlazadas.ListaEnlazada;
+import controlador.ed.listas.enlazadas.ListaEnlazada;
 
 /**
  *
@@ -46,4 +46,3 @@ public class Sucursal {
     }
     
 }
-

@@ -4,20 +4,20 @@
  */
 package controlador.dao;
 
-import controlador.sd.list.listasenlazadas.ListaEnlazada;
+import controlador.ed.listas.enlazadas.ListaEnlazada;
 import java.io.IOException;
 
 /**
  *
  * @author walter
  */
-public interface InterfaceDao<T> {
+public interface DaoInterface<T> {
 
     public void guardar(T obj) throws IOException;
 
-    public void modificar(T obj, Integer pos);
+    public void modificar(T obj, Integer pos) throws IOException;
 
-    public ListaEnlazada<T> listar();
+    public ListaEnlazada<T> listar() throws IOException;
 
     public T get(Integer id);
 }

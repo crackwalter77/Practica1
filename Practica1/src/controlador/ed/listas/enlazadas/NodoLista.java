@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador.sd.list.listasenlazadas;
+package controlador.ed.listas.enlazadas;
 
 /**
  *
  * @author walter
  */
-public class NodoLista <E> {
+public class NodoLista<E> {
+
     private E info;
     private NodoLista<E> sig;
 
@@ -17,10 +18,8 @@ public class NodoLista <E> {
 
     public NodoLista(E info) {
         this.info = info;
-        sig=null;
+        sig = null;
     }
-    
-    
 
     public E getInfo() {
         return info;
@@ -37,6 +36,5 @@ public class NodoLista <E> {
     public void setSig(NodoLista<E> sig) {
         this.sig = sig;
     }
-
 
 }

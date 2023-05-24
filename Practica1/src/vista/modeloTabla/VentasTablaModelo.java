@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package vista;
+package vista.modeloTabla;
 
-import controlador.sd.list.exception.EmptyException;
-import controlador.sd.list.exception.PositionException;
-import controlador.sd.list.listasenlazadas.ListaEnlazada;
+import controlador.ed.excepcion.EmptyExcepcion;
+import controlador.ed.excepcion.PosicionExcepcion;
+import controlador.ed.listas.enlazadas.ListaEnlazada;
 import javax.swing.table.AbstractTableModel;
 import modelo.Venta;
 
@@ -41,7 +41,7 @@ public class VentasTablaModelo extends AbstractTableModel {
             }
 
             return null;
-        } catch (EmptyException | PositionException ex) {
+        } catch (EmptyExcepcion | PosicionExcepcion ex) {
         }
 
         return null;
@@ -67,3 +67,4 @@ public class VentasTablaModelo extends AbstractTableModel {
     }
 
 }
+

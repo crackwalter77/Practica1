@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador.sd.list.listasenlazadas;
+package controlador.ed.listas.enlazadas;
 
-import controlador.sd.list.exception.EmptyException;
-import controlador.sd.list.exception.PositionException;
-
+import controlador.ed.excepcion.EmptyExcepcion;
+import controlador.ed.excepcion.PosicionExcepcion;
 /**
  *
  * @author walter
@@ -54,7 +53,7 @@ public class ListaEnlazada<E> {
         }
     }
 
-    public void insertarPosicion(E info, Integer pos) throws PositionException {
+    public void insertarPosicion(E info, Integer pos) throws PosicionExcepcion {
         if (isEmpty()) {
             insertar(info);
         } else if (pos >= 0 && pos < size() && pos == 0) {
@@ -70,14 +69,14 @@ public class ListaEnlazada<E> {
             nuevo.setSig(sig);
             size++;
         } else {
-            throw new PositionException();
+            throw new PosicionExcepcion();
         }
 
     }
 
-    public E get(Integer pos) throws EmptyException, PositionException {
+    public E get(Integer pos) throws EmptyExcepcion, PosicionExcepcion {
         if (isEmpty()) {
-            throw new EmptyException();
+            throw new EmptyExcepcion();
         } else {
             E dato = null;
             if (pos >= 0 && pos < size()) {
@@ -91,18 +90,19 @@ public class ListaEnlazada<E> {
                     dato = aux.getInfo();
                 }
             } else {
-                throw new PositionException();
+                throw new PosicionExcepcion();
             }
             return dato;
         }
     }
 
-    public void modifica(Integer pos, E info) throws EmptyException, PositionException {
+    public void modificar(Integer pos, E info) throws EmptyExcepcion, PosicionExcepcion {
 
         if (isEmpty()) {
-            throw new EmptyException();
+            throw new EmptyExcepcion();
         } else {
             if (pos >= 0 && pos < size()) {
+                System.out.println("Entre aca");
                 if (pos == 0) {
                     this.cabecera.setInfo(info);
                 } else {
@@ -113,14 +113,15 @@ public class ListaEnlazada<E> {
                     aux.setInfo(info);
                 }
             } else {
-                throw new PositionException();
+                System.out.println("No entre ;>");
+                throw new PosicionExcepcion();
             }
         }
     }
 
-    public E delete(Integer pos) throws EmptyException, PositionException {
+    public E delete(Integer pos) throws EmptyExcepcion, PosicionExcepcion {
         if (isEmpty()) {
-            throw new EmptyException();
+            throw new EmptyExcepcion();
         } else {
             E dato = null;
             if (pos >= 0 && pos < size()) {
@@ -140,7 +141,7 @@ public class ListaEnlazada<E> {
                     size--;
                 }
             } else {
-                throw new PositionException();
+                throw new PosicionExcepcion();
             }
             return dato;
         }
@@ -154,9 +155,9 @@ public class ListaEnlazada<E> {
         return size;
     }
 
-    public void imprimir() throws EmptyException {
+    public void imprimir() throws EmptyExcepcion {
         if (isEmpty()) {
-            throw new EmptyException();
+            throw new EmptyExcepcion();
         } else {
             NodoLista<E> aux = cabecera;
             System.out.println("-------Lista-------");
@@ -169,3 +170,4 @@ public class ListaEnlazada<E> {
 
     }
 }
+

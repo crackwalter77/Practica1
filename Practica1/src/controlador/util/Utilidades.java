@@ -4,7 +4,10 @@
  */
 package controlador.util;
 
-import controlador.sd.list.listasenlazadas.NodoLista;
+import controlador.ed.excepcion.EmptyExcepcion;
+import controlador.ed.excepcion.PosicionExcepcion;
+import controlador.ed.listas.enlazadas.ListaEnlazada;
+import controlador.ed.listas.enlazadas.NodoLista;
 import modelo.Sucursal;
 import modelo.Venta;
 
@@ -37,6 +40,45 @@ public class Utilidades {
         }
 
         return suma / (s.getVentas().size());
+    }
 
+    public static String sucursalVentaMayor(ListaEnlazada<Sucursal> sucursales) throws EmptyExcepcion, PosicionExcepcion {
+        String sucursalInfo = "";
+        double aux = 0;
+        double sucursalMayor = 0;
+
+        for (int i = 0; i < sucursales.size(); i++) {
+            if (sucursales.get(i) != null) {
+                aux = totalVentas(sucursales.get(i));
+                if (sucursalMayor < aux) {
+                    sucursalMayor = aux;
+                    sucursalInfo = "La sucursal con mayor ventas: " + sucursales.get(i).getNombre();
+                }
+            }
+        }
+        
+        if (sucursalMayor == 0) {
+            return "Ingrese las ventas";
+        }
+        
+        return sucursalInfo;
+    }
+
+    public static String sucursalVentaMenor(ListaEnlazada<Sucursal> sucursales) throws EmptyExcepcion, PosicionExcepcion {
+        String sucursalInfo = "";
+        double aux = 0;
+        double sucursalMenor = -1;
+
+        for (int i = 0; i < sucursales.size(); i++) {
+            if (sucursales.get(i) != null) {
+                aux = totalVentas(sucursales.get(i));
+                if (sucursalMenor > aux || sucursalMenor == -1) {
+                    sucursalMenor = aux;
+                    sucursalInfo = "La sucursal con menor ventas: " + sucursales.get(i).getNombre();
+                }
+            }
+        }
+
+        return sucursalInfo;
     }
 }

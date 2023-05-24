@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package vista;
+package vista.modeloTabla;
 
-import controlador.sd.list.exception.EmptyException;
-import controlador.sd.list.exception.PositionException;
-import controlador.sd.list.listasenlazadas.ListaEnlazada;
+import controlador.ed.excepcion.EmptyExcepcion;
+import controlador.ed.excepcion.PosicionExcepcion;
+import controlador.ed.listas.enlazadas.ListaEnlazada;
 import controlador.util.Utilidades;
 import javax.swing.table.AbstractTableModel;
 import modelo.Sucursal;
@@ -42,8 +42,8 @@ public class SucursalTablaModelo extends AbstractTableModel {
                 case 2:
                     return s == null ? "0.0" : Utilidades.totalVentas(s);
             }
-        } catch (EmptyException ex) {
-        } catch (PositionException ex) {
+        } catch (EmptyExcepcion ex) {
+        } catch (PosicionExcepcion ex) {
         }
         return null;
     }
@@ -71,3 +71,4 @@ public class SucursalTablaModelo extends AbstractTableModel {
     }
 
 }
+
